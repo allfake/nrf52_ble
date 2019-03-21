@@ -48,7 +48,7 @@ class BLESerial : public BLEPeripheral, public Stream
     BLECharacteristic _rx2Characteristic = BLECharacteristic("80BF2A15-73BD-465E-A80F-C8C910821495", BLEWriteWithoutResponse, BLE_ATTRIBUTE_MAX_VALUE_LENGTH);
     BLEDescriptor _rx2NameDescriptor = BLEDescriptor("2901", "RX2 - Receive Data (Write)");
     
-    BLECharacteristic _txCharacteristic = BLECharacteristic("6E400003-B5A3-F393-E0A9-E50E24DCCA9E", BLENotify, BLE_ATTRIBUTE_MAX_VALUE_LENGTH);
+    BLECharacteristic _txCharacteristic = BLECharacteristic("6E400003-B5A3-F393-E0A9-E50E24DCCA9E", BLERead | BLENotify, BLE_ATTRIBUTE_MAX_VALUE_LENGTH);
     BLEDescriptor _txNameDescriptor = BLEDescriptor("2901", "TX - Transfer Data (Notify)");
 
     void _received(const uint8_t* data, size_t size);
