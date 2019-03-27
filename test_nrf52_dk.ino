@@ -178,6 +178,18 @@ void SetLock()
   digitalWrite(led3, POWER_LOW);
   isAuth = false;
   startReadPassword = false;
+
+  // send DISCONNECT
+  bleSerial.write(68);
+  bleSerial.write(73);
+  bleSerial.write(83);
+  bleSerial.write(67);
+  bleSerial.write(79);
+  bleSerial.write(78);
+  bleSerial.write(78);
+  bleSerial.write(69);
+  bleSerial.write(67);
+  bleSerial.write(84);
 }
 
 void SetWaitMode()
